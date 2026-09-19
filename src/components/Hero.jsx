@@ -37,11 +37,11 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-                        Building modern, scalable web applications with
+                        I design and build responsive, modern web experiences with
                         <span className="text-slate-900 dark:text-slate-100 font-semibold"> React</span>,
                         <span className="text-slate-900 dark:text-slate-100 font-semibold"> Next.js</span>, and
                         <span className="text-slate-900 dark:text-slate-100 font-semibold"> Node.js</span>.
-                        Focused on creating intuitive user experiences and performant backend systems.
+                        My focus is on creating clean interfaces, smooth user journeys, and reliable full-stack solutions.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 mb-12">

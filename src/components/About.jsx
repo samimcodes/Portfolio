@@ -103,13 +103,14 @@ const About = () => {
 
                         <div className="space-y-6 text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl font-medium">
                             <p>
-                                Hi, I'm Samim, a passionate Full-Stack Developer dedicated to building efficient and scalable web applications.
-                                I combine creativity with technical expertise to deliver user-centric solutions.
+                                Hi, I'm Samim, a Full-Stack Developer focused on building efficient, scalable, and visually polished web applications.
+                                I enjoy turning ideas into practical products that feel modern, fast, and easy to use.
                             </p>
                             <p>
-                                My journey involves expertise in the <strong className="text-slate-900 dark:text-white">MERN stack</strong> (MongoDB, Express, React, Node.js)
-                                along with <strong className="text-slate-900 dark:text-white">Next.js</strong> for server-side rendering.
-                                I'm constantly exploring new technologies to stay ahead in the ever-evolving tech landscape.
+                                My work spans the <strong className="text-slate-900 dark:text-white">MERN stack</strong> and
+                                <strong className="text-slate-900 dark:text-white"> Next.js</strong>, with a strong interest in creating strong user experiences,
+                                clean architecture, and dependable backend systems.
+                                I stay curious and keep learning so I can build solutions that help people and businesses grow.
                             </p>
                         </div>
 
