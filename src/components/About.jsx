@@ -122,7 +122,7 @@ const About = () => {
                                 <Briefcase size={18} /> Hire Me
                             </a>
                             <a
-                                href="https://drive.google.com/file/d/16okLOsG4D9C9m3-JjJfSJmGPagyxf1VP/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1liEkw82D8zQL0-A0BIqw-PK5l7UBEo7C/view?usp=sharing"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl font-bold text-sm tracking-wide transition-all hover:bg-slate-50 dark:hover:bg-white/10 dark:hover:border-white/20 hover:-translate-y-0.5 active:scale-95 shadow-sm"
