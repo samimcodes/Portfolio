@@ -33,7 +33,7 @@ const Hero = () => {
 
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
                         Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">Samim</span>
-                        <span className="block text-2xl lg:text-4xl text-slate-600 dark:text-slate-400 font-medium mt-4">MERN-Stack Developer</span>
+                        <span className="block text-2xl lg:text-4xl text-slate-600 dark:text-slate-400 font-medium mt-4">Full-Stack Developer</span>
                     </h1>
 
                     <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -120,7 +120,7 @@ const Hero = () => {
                         >
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-                                <p className="font-bold text-slate-900 dark:text-slate-100 text-sm">MERN Stack</p>
+                                <p className="font-bold text-slate-900 dark:text-slate-100 text-sm">Full-Stack</p>
                             </div>
                         </motion.div>
                     </div>

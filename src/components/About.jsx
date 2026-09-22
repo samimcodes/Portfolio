@@ -107,8 +107,8 @@ const About = () => {
                                 I enjoy turning ideas into practical products that feel modern, fast, and easy to use.
                             </p>
                             <p>
-                                My work spans the <strong className="text-slate-900 dark:text-white">MERN stack</strong> and
-                                <strong className="text-slate-900 dark:text-white"> Next.js</strong>, with a strong interest in creating strong user experiences,
+                                My work spans <strong className="text-slate-900 dark:text-white">full-stack development</strong> with
+                                <strong className="text-slate-900 dark:text-white"> React, Node.js, and Next.js</strong>, with a strong interest in creating strong user experiences,
                                 clean architecture, and dependable backend systems.
                                 I stay curious and keep learning so I can build solutions that help people and businesses grow.
                             </p>
