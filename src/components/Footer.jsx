@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Facebook, Github, Linkedin, Mail, Twitter, MapPin, ArrowUpRight, Heart } from "lucide-react";
+import { Facebook, Github, Linkedin, Mail, MapPin, ArrowUpRight, Heart } from "lucide-react";
 
 const Footer = () => {
     const year = new Date().getFullYear();
