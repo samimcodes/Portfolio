@@ -174,6 +174,8 @@ const Header = () => {
                             className="flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle menu"
+                            aria-expanded={isMenuOpen}
+                            aria-controls="mobile-navigation"
                         >
                             <AnimatePresence mode="wait" initial={false}>
                                 <motion.span
@@ -204,7 +206,7 @@ const Header = () => {
                         {/* Gradient accent at top of mobile menu */}
                         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
 
-                        <nav className="container py-6 flex flex-col gap-1">
+                        <nav id="mobile-navigation" className="container py-6 flex flex-col gap-1">
                             {navLinks.map((link, i) => {
                                 const isActive = activeSection === link.href.slice(1);
                                 return (

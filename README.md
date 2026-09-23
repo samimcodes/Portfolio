@@ -14,9 +14,29 @@
 <br />
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-samim01--portfolio.netlify.app-blue?style=for-the-badge)](https://samim01-portfolio.netlify.app/)
-[![Download CV](https://img.shields.io/badge/📄_Download-My_CV-8B5CF6?style=for-the-badge)](https://drive.google.com/file/d/16okLOsG4D9C9m3-JjJfSJmGPagyxf1VP/view?usp=sharing)
+[![Download CV](https://img.shields.io/badge/📄_Download-My_CV-8B5CF6?style=for-the-badge)](https://drive.google.com/file/d/1liEkw82D8zQL0-A0BIqw-PK5l7UBEo7C/view?usp=sharing)
 
 </div>
+
+---
+
+## ⚙️ Local Setup
+
+```bash
+npm install
+copy .env.example .env
+npm run dev
+```
+
+Add your EmailJS values to `.env` before testing the contact form:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+Never commit `.env`; it is ignored by git.
 
 ---
 
@@ -57,6 +77,7 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 ## 💼 Featured Projects
 
 ### 1. 🚀 CareerFlow — SaaS Job Application Tracker
+
 > Full-stack SaaS platform with drag-and-drop Kanban pipeline, AI-powered feedback (Gemini API), Stripe subscriptions, and real-time analytics.
 
 **Tech:** React · Redux · Node.js · Express · MongoDB · Stripe · AI API
@@ -67,6 +88,7 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 ---
 
 ### 2. 🏆 Contest Hub — Contest Management Platform
+
 > Full-stack platform with role-based dashboards (Admin, Creator, User), Stripe payments, contest approval workflow, and leaderboard system.
 
 **Tech:** React · Tailwind · Node.js · Express · MongoDB · Firebase Auth · JWT · Stripe
@@ -77,6 +99,7 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 ---
 
 ### 3. 🏠 HomeHero — Service Finder
+
 > Connects users with trusted local service providers. Features booking management, rating system, and secure JWT authentication.
 
 **Tech:** React · Tailwind · Node.js · Express · MongoDB · Firebase · JWT
@@ -87,6 +110,7 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 ---
 
 ### 4. 🌿 GreenNest — Plant Care Platform
+
 > Plant care platform with secure login, profile management, and consultation bookings.
 
 **Tech:** React · Tailwind · Firebase · Express · MongoDB
@@ -97,6 +121,7 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 ---
 
 ### 5. 🍽️ Nature's Platter — Next.js App
+
 > Next.js application with NextAuth authentication and product management.
 
 **Tech:** Next.js · NextAuth · Tailwind · MongoDB · Vercel
@@ -107,6 +132,7 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 ---
 
 ### 6. 📱 AppGalaxy — App Showcase Platform
+
 > Browse apps, view details, install/uninstall apps, and monitor performance through interactive charts.
 
 **Tech:** React · Tailwind · Firebase · Recharts · React Router
@@ -120,15 +146,15 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 
 <div align="center">
 
-| | Feature | Description |
-|---|---------|-------------|
-| 🎨 | **Premium Design** | Glassmorphism, gradient accents, floating badges & shimmer effects |
-| 🌙 | **Dark / Light Mode** | Persistent theme toggle with smooth transitions |
-| 🎬 | **Smooth Animations** | Scroll-triggered reveals & micro-interactions via Framer Motion |
-| ✉️ | **Working Contact Form** | EmailJS integration with Zod validation |
-| 📱 | **Fully Responsive** | Looks stunning on every device |
-| ✨ | **Canvas Particles** | Interactive floating particle background |
-| 🚀 | **Blazing Fast** | Vite-powered, optimized production builds |
+|     | Feature                  | Description                                                        |
+| --- | ------------------------ | ------------------------------------------------------------------ |
+| 🎨  | **Premium Design**       | Glassmorphism, gradient accents, floating badges & shimmer effects |
+| 🌙  | **Dark / Light Mode**    | Persistent theme toggle with smooth transitions                    |
+| 🎬  | **Smooth Animations**    | Scroll-triggered reveals & micro-interactions via Framer Motion    |
+| ✉️  | **Working Contact Form** | EmailJS integration with Zod validation                            |
+| 📱  | **Fully Responsive**     | Looks stunning on every device                                     |
+| ✨  | **Canvas Particles**     | Interactive floating particle background                           |
+| 🚀  | **Blazing Fast**         | Vite-powered, optimized production builds                          |
 
 </div>
 
@@ -138,8 +164,8 @@ I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, speciali
 
 <div align="center">
 
-| Desktop View | Mobile View |
-|:---:|:---:|
+|              Desktop View              |             Mobile View              |
+| :------------------------------------: | :----------------------------------: |
 | ![Desktop](public/desktop-preview.png) | ![Mobile](public/mobile-preview.png) |
 
 </div>

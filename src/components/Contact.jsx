@@ -329,6 +329,7 @@ const schema = z.object({
     email: z.string().email("Enter a valid email"),
     phone: z.string().optional(),
     message: z.string().min(10, "At least 10 characters").max(1000, "Max 1000 characters"),
+    company: z.string().optional(),
 });
 
 /* ─────────────────────────────────────────
