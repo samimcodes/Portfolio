@@ -19,7 +19,7 @@ const Header = () => {
 
     // Track active section on scroll
     useEffect(() => {
-        const sections = ["home", "about", "skills", "projects", "contact"];
+        const sections = ["home", "about", "services", "skills", "projects", "contact"];
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -54,6 +54,7 @@ const Header = () => {
     const navLinks = [
         { name: "Home", href: "#home" },
         { name: "About", href: "#about" },
+        { name: "Services", href: "#services" },
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
         { name: "Contact", href: "#contact" },
