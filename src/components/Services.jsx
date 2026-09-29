@@ -1,43 +1,50 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, LayoutTemplate, Rocket, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Code2, LayoutTemplate, Rocket, ShieldCheck } from "lucide-react";
 
 const services = [
     {
         icon: Code2,
         title: "Frontend Development",
+        label: "01",
         description: "Responsive, interactive interfaces with React, Next.js, and Tailwind that feel modern, fast, and user-friendly.",
     },
     {
         icon: LayoutTemplate,
         title: "UI/UX Design",
+        label: "02",
         description: "Clean layouts, strong visual hierarchy, and intuitive flows that turn user needs into polished digital experiences.",
     },
     {
         icon: Rocket,
         title: "Full-Stack Builds",
+        label: "03",
         description: "End-to-end product builds spanning APIs, databases, authentication, dashboards, and deployment-ready features.",
     },
     {
         icon: ShieldCheck,
         title: "Optimization & Maintenance",
+        label: "04",
         description: "Performance tuning, bug fixing, refactoring, and reliable improvements that keep products stable and scalable.",
     },
 ];
 
 const Services = () => {
     return (
-        <section id="services" className="py-24 bg-white dark:bg-[#090b14] relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.10),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.10),_transparent_30%)]" />
+        <section id="services" className="relative overflow-hidden bg-[#f7f8fa] py-24 dark:bg-[#090b14] md:py-32">
+            <div className="absolute -right-24 top-20 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+            <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
 
             <div className="container relative z-10">
-                <div className="text-center mb-16">
+                <div className="mb-16 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-20">
+                    <div>
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-medium mb-4"
+                        className="mb-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400"
                     >
+                        <span className="h-2 w-2 rounded-full bg-blue-500" />
                         What I Do
                     </motion.span>
                     <motion.h2
@@ -45,37 +52,42 @@ const Services = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4"
+                        className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 dark:text-slate-100 md:text-6xl"
                     >
-                        Building digital products that are <span className="text-blue-500">useful, fast, and modern</span>
+                        Digital products with <span className="text-blue-600 dark:text-blue-400">purpose.</span>
                     </motion.h2>
+                    </div>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+                        className="max-w-lg text-lg leading-relaxed text-slate-600 dark:text-slate-400 lg:pb-1"
                     >
-                        I help businesses and founders turn concepts into high-quality web experiences with a focus on performance, clarity, and real-world results.
+                        I help businesses and founders turn sharp ideas into high-quality web experiences built for performance, clarity, and real-world results.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-                    {services.map(({ icon: Icon, title, description }, index) => (
+                <div className="divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+                    {services.map(({ icon: Icon, title, description, label }, index) => (
                         <motion.div
                             key={title}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.45, delay: index * 0.08 }}
-                            whileHover={{ y: -6 }}
-                            className="group bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-lg shadow-slate-200/30 dark:shadow-none transition-all duration-300 hover:border-blue-500/40 hover:shadow-blue-500/10"
+                            whileHover={{ x: 8 }}
+                            className="group grid gap-5 py-7 transition-colors duration-300 hover:bg-white/70 dark:hover:bg-slate-900/50 md:grid-cols-[72px_1fr_2fr_48px] md:items-center md:gap-8 md:px-5"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white mb-5 shadow-lg shadow-blue-500/20">
-                                <Icon size={22} />
+                            <div className="flex items-center gap-4 md:block">
+                                <span className="text-sm font-semibold text-slate-400 dark:text-slate-600">{label}</span>
+                                <div className="mt-0 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 shadow-sm transition-colors group-hover:border-blue-500 group-hover:bg-blue-600 group-hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-blue-400 md:mt-4">
+                                    <Icon size={19} />
+                                </div>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">{title}</h3>
-                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{description}</p>
+                            <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{title}</h3>
+                            <p className="max-w-xl leading-relaxed text-slate-600 dark:text-slate-400">{description}</p>
+                            <ArrowUpRight className="text-slate-400 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400" size={22} />
                         </motion.div>
                     ))}
                 </div>
