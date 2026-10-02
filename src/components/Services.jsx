@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code2, LayoutTemplate, Rocket, ShieldCheck } from "lucide-react";
+import { ArrowRight, Code2, LayoutTemplate, Rocket, ShieldCheck } from "lucide-react";
 
 const services = [
     {
@@ -32,19 +32,17 @@ const services = [
 const Services = () => {
     return (
         <section id="services" className="relative overflow-hidden bg-slate-100/80 py-24 dark:bg-[#070b16] md:py-32">
-            <div className="absolute -left-16 top-12 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]" />
-            <div className="absolute -right-16 bottom-10 h-72 w-72 rounded-full bg-violet-500/10 blur-[120px]" />
-
-            <div className="container relative z-10">
-                <div className="mb-14 max-w-3xl">
+            <div className="container relative z-10 max-w-7xl">
+                <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+                    <div className="lg:sticky lg:top-32 lg:self-start">
                     <motion.span
                         initial={{ opacity: 0, y: 18 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-blue-600 dark:text-blue-400"
+                        className="mb-6 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-blue-700 dark:text-blue-400"
                     >
-                        <span className="h-2 w-2 rounded-full bg-blue-500" />
-                        What I Do
+                        <span className="h-px w-8 bg-blue-600 dark:bg-blue-400" />
+                        Services / 04
                     </motion.span>
 
                     <motion.h2
@@ -52,51 +50,45 @@ const Services = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.08 }}
-                        className="text-4xl font-black leading-[1.05] tracking-[-0.04em] text-slate-950 dark:text-white md:text-5xl lg:text-6xl"
+                        className="max-w-xl text-4xl font-black leading-[1.05] text-slate-950 dark:text-white md:text-5xl"
                     >
-                        Digital products with <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">purpose.</span>
+                        Thoughtful work, <span className="text-blue-600 dark:text-blue-400">built to matter.</span>
                     </motion.h2>
-                </div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.14 }}
-                    className="mb-12 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400"
-                >
-                    I help businesses and founders turn sharp ideas into high-quality web experiences built for performance, clarity, and real-world results.
-                </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 18 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.14 }}
+                        className="mt-6 max-w-md text-base leading-7 text-slate-600 dark:text-slate-400"
+                    >
+                        From the first sketch to the final deploy, I help turn ambitious ideas into clear, dependable digital products.
+                    </motion.p>
+                    </div>
 
-                <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+                    <div className="border-t border-slate-300 dark:border-slate-700">
                     {services.map(({ icon: Icon, title, description, label }, index) => (
-                        <motion.div
+                        <motion.a
                             key={title}
+                            href="#contact"
                             initial={{ opacity: 0, y: 28 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.45, delay: index * 0.08 }}
-                            whileHover={{ y: -8, scale: 1.01 }}
-                            className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white/80 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm transition-all duration-300 hover:border-blue-200 hover:shadow-[0_22px_60px_rgba(59,130,246,0.12)] dark:border-slate-800 dark:bg-slate-900/80 dark:hover:border-blue-500/30"
+                            transition={{ duration: 0.4, delay: index * 0.07 }}
+                            className="group grid grid-cols-[3rem_2.75rem_minmax(0,1fr)_1.5rem] items-start gap-4 border-b border-slate-300 py-7 transition-colors hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 dark:border-slate-700 dark:hover:bg-white/[0.03] sm:grid-cols-[3.5rem_3rem_minmax(0,1fr)_1.5rem] sm:gap-5 sm:py-8"
                         >
-                            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500" />
-
-                            <div className="mb-6 flex items-center justify-between">
-                                <span className="text-sm font-semibold tracking-[0.2em] text-slate-400 dark:text-slate-500">{label}</span>
-                                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-violet-600 text-white shadow-lg shadow-blue-500/25 transition-transform duration-300 group-hover:scale-105">
-                                    <Icon size={20} />
-                                </div>
+                            <span className="pt-1 text-sm font-semibold tabular-nums text-slate-400 dark:text-slate-500">{label}</span>
+                            <div className="flex h-11 w-11 items-center justify-center border border-slate-300 text-blue-700 transition-colors group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white dark:border-slate-700 dark:text-blue-400 dark:group-hover:border-blue-500 dark:group-hover:bg-blue-500 dark:group-hover:text-white">
+                                <Icon size={19} strokeWidth={1.8} />
                             </div>
-
-                            <h3 className="mb-4 text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{title}</h3>
-                            <p className="text-sm leading-7 text-slate-600 dark:text-slate-400">{description}</p>
-
-                            <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400">
-                                Explore
-                                <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                            <div>
+                                <h3 className="text-lg font-bold text-slate-900 transition-colors group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-400 sm:text-xl">{title}</h3>
+                                <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-400">{description}</p>
                             </div>
-                        </motion.div>
+                            <ArrowRight size={19} className="mt-1 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
+                        </motion.a>
                     ))}
+                    </div>
                 </div>
             </div>
         </section>
