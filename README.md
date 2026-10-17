@@ -180,7 +180,8 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 
 <br />
 
-[![Email](https://img.shields.io/badge/mdsamimhossen827@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mdsamimhossen827@gmail.com)
+[![Email](https://img.shields.io/badge/mdsamimhosen827@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mdsamimhosen827@gmail.com)
+[![Fiverr](https://img.shields.io/badge/Fiverr-samim__io-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/samim_io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Samim-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samim01/)
 [![GitHub](https://img.shields.io/badge/GitHub-samimcodes-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/samimcodes)
 [![Facebook](https://img.shields.io/badge/Facebook-Samim-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/md.samim.khan.22906)
