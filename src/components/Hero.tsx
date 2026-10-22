@@ -12,6 +12,9 @@ import {
   Sparkles,
   Layers,
   Code2,
+  Clock,
+  ShieldCheck,
+  CheckCircle2,
 } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
 import meImg from "@/assets/me.png";
@@ -74,18 +77,18 @@ const Hero: React.FC = () => {
               </span>
             </h1>
 
-            {/* Introduction */}
+            {/* Introduction: Client & Business Value Focused */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-8 max-w-xl">
-              Hi, I&apos;m <strong className="text-slate-900 dark:text-white font-semibold">Md Samim Hosen</strong>, a Full Stack Developer at <span className="text-blue-600 dark:text-blue-400 font-semibold">JEVXO</span> based in Rangpur, Bangladesh. I craft reliable, low-latency web platforms using <span className="font-semibold text-slate-900 dark:text-slate-100">Next.js, TypeScript, PostgreSQL, Prisma, and Node.js</span>.
+              I help startups, agencies, and businesses transform ideas into production-ready web platforms, revenue-generating SaaS systems, and fast digital experiences — delivered on schedule with clean Next.js, TypeScript, and modern backend architectures.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-8">
+            <div className="flex flex-wrap items-center gap-3.5 mb-7">
               <a
                 href="#projects"
                 className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.03] active:scale-98 transition-all"
               >
-                <span>Explore Projects</span>
+                <span>Explore My Work</span>
                 <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -93,7 +96,7 @@ const Hero: React.FC = () => {
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm border border-slate-200 dark:border-white/10 shadow-sm hover:scale-[1.02] transition-all"
               >
-                Let&apos;s Connect
+                Discuss a Project
               </a>
 
               <a
@@ -102,12 +105,28 @@ const Hero: React.FC = () => {
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                <FileText size={16} /> View Resume
+                <FileText size={16} /> Download CV
               </a>
             </div>
 
+            {/* Client Trust & Quality Guarantees */}
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-500 dark:text-slate-400 mb-8 font-medium">
+              <span className="inline-flex items-center gap-1.5">
+                <Clock size={14} className="text-blue-500" />
+                <span>On-Time Milestone Delivery</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck size={14} className="text-emerald-500" />
+                <span>Secure Escrow (Fiverr / Direct)</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CheckCircle2 size={14} className="text-purple-500" />
+                <span>Post-Launch Bugfree Support</span>
+              </span>
+            </div>
+
             {/* Social Links & Location */}
-            <div className="flex items-center gap-5 text-slate-500 dark:text-slate-400">
+            <div className="flex items-center gap-5 text-slate-500 dark:text-slate-400 pt-5 border-t border-slate-200/60 dark:border-white/[0.06]">
               <a
                 href="https://github.com/samimcodes"
                 target="_blank"
@@ -115,7 +134,7 @@ const Hero: React.FC = () => {
                 aria-label="GitHub Profile"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                <Github size={21} />
+                <Github size={20} />
               </a>
               <a
                 href="https://www.linkedin.com/in/samim01/"
@@ -124,14 +143,14 @@ const Hero: React.FC = () => {
                 aria-label="LinkedIn Profile"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                <Linkedin size={21} />
+                <Linkedin size={20} />
               </a>
               <a
                 href="mailto:mdsamimhosen827@gmail.com"
                 aria-label="Email Samim"
                 className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                <Mail size={21} />
+                <Mail size={20} />
               </a>
               <a
                 href="https://www.fiverr.com/samim_io"
@@ -140,7 +159,7 @@ const Hero: React.FC = () => {
                 aria-label="Fiverr Profile"
                 className="hover:text-[#1DBF73] transition-colors"
               >
-                <SiFiverr size={22} />
+                <SiFiverr size={21} />
               </a>
               <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
               <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
