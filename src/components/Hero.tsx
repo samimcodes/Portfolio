@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
                 </span>
-                <span>Open for Remote Roles &amp; Contracts</span>
+                <span>Available for Remote Roles &amp; Client Projects</span>
               </div>
             </div>
 
@@ -77,9 +77,9 @@ const Hero: React.FC = () => {
               </span>
             </h1>
 
-            {/* Introduction: Client & Business Value Focused */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-8 max-w-xl">
-              I help startups, agencies, and businesses transform ideas into production-ready web platforms, revenue-generating SaaS systems, and fast digital experiences — delivered on schedule with clean Next.js, TypeScript, and modern backend architectures.
+            {/* Introduction: Executive Dual Pitch */}
+            <p className="text-base sm:text-lg text-slate-600 dark:text-zinc-300 leading-relaxed font-normal mb-8 max-w-xl">
+              Full Stack Engineer at <strong className="text-slate-900 dark:text-white font-semibold">JEVXO</strong> specializing in <span className="text-slate-900 dark:text-white font-semibold">Next.js 16, TypeScript, PostgreSQL, and Node.js</span>. I architect production-grade web platforms and scalable SaaS solutions — available for <span className="text-blue-600 dark:text-blue-400 font-semibold">remote engineering teams</span> and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">founder MVP partnerships</span>.
             </p>
 
             {/* Action Buttons */}
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm border border-slate-200 dark:border-white/10 shadow-sm hover:scale-[1.02] transition-all"
               >
-                Discuss a Project
+                Hire Me / Let&apos;s Talk
               </a>
 
               <a
@@ -109,19 +109,21 @@ const Hero: React.FC = () => {
               </a>
             </div>
 
-            {/* Client Trust & Quality Guarantees */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-500 dark:text-slate-400 mb-8 font-medium">
-              <span className="inline-flex items-center gap-1.5">
-                <Clock size={14} className="text-blue-500" />
+            {/* Client Trust & Remote Standards Capsule */}
+            <div className="inline-flex flex-wrap items-center gap-y-2 gap-x-4 p-2 px-3.5 rounded-2xl bg-slate-100/80 dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/[0.08] text-xs text-slate-600 dark:text-zinc-400 mb-8 backdrop-blur-md">
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                <span>Worldwide Remote (Flexible)</span>
+              </span>
+              <span className="text-slate-300 dark:text-zinc-700 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 <span>On-Time Milestone Delivery</span>
               </span>
-              <span className="inline-flex items-center gap-1.5">
-                <ShieldCheck size={14} className="text-emerald-500" />
-                <span>Secure Escrow (Fiverr / Direct)</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 size={14} className="text-purple-500" />
-                <span>Post-Launch Bugfree Support</span>
+              <span className="text-slate-300 dark:text-zinc-700 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                <span>Type-Safe Production Code</span>
               </span>
             </div>
 
