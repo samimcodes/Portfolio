@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -11,7 +11,6 @@ import {
   FileText,
   Sparkles,
   Layers,
-  Code2,
   Clock,
   ShieldCheck,
   CheckCircle2,
@@ -37,11 +36,25 @@ const techStack = [
 ];
 
 const Hero: React.FC = () => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <section
       id="home"
       className="relative min-h-[96vh] flex flex-col justify-between pt-32 pb-12 overflow-hidden text-slate-900 dark:text-slate-100"
     >
+      {/* Subtle Ambient Radial Lighting Bloom */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-blue-600/10 via-indigo-600/8 to-purple-600/5 rounded-full blur-[110px] pointer-events-none -z-10" />
+
       <div className="container max-w-6xl mx-auto px-6 my-auto">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column (7 cols) */}
@@ -82,23 +95,29 @@ const Hero: React.FC = () => {
               Full Stack Engineer at <strong className="text-slate-900 dark:text-white font-semibold">JEVXO</strong> specializing in <span className="text-slate-900 dark:text-white font-semibold">Next.js 16, TypeScript, PostgreSQL, and Node.js</span>. I architect production-grade web platforms and scalable SaaS solutions — available for <span className="text-blue-600 dark:text-blue-400 font-semibold">remote engineering teams</span> and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">founder MVP partnerships</span>.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons with Radiant Shimmer */}
             <div className="flex flex-wrap items-center gap-3.5 mb-7">
+              {/* Primary Button: Shimmer & Glow */}
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.03] active:scale-98 transition-all"
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:via-indigo-500 hover:to-blue-500 text-white font-semibold text-sm shadow-[0_0_25px_rgba(59,130,246,0.38)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] hover:scale-[1.03] active:scale-98 transition-all overflow-hidden"
               >
+                {/* Shimmer Sweep Animation */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
                 <span>Explore My Work</span>
                 <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
               </a>
 
+              {/* Secondary Button: Subtle Glow Border */}
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm border border-slate-200 dark:border-white/10 shadow-sm hover:scale-[1.02] transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm border border-slate-200/90 dark:border-white/10 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 shadow-sm hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] hover:scale-[1.02] active:scale-98 transition-all"
               >
-                Hire Me / Let&apos;s Talk
+                <Sparkles size={15} className="text-indigo-500" />
+                <span>Hire Me / Let&apos;s Talk</span>
               </a>
 
+              {/* Tertiary Button: Download CV */}
               <a
                 href="https://drive.google.com/file/d/1liEkw82D8zQL0-A0BIqw-PK5l7UBEo7C/view?usp=sharing"
                 target="_blank"
@@ -170,23 +189,58 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: 3D Photo Showcase with Luminous Ambient Aura */}
+          {/* Right Column: 3D Photo Showcase with Conic Border Beam & Spotlight Hover */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92, rotateY: -6 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-[300px] sm:w-[330px] aspect-[4/5] group">
-              {/* 1. Focused Crisp Radiant Glow (No murky full-screen blur) */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-[2.5rem] opacity-25 dark:opacity-40 blur-2xl group-hover:opacity-55 transition-all duration-500" />
+            <div
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative w-[300px] sm:w-[330px] aspect-[4/5] group"
+            >
+              {/* 1. Interactive Mouse Spotlight Glow */}
+              <div
+                className="absolute -inset-6 rounded-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-2xl -z-10"
+                style={{
+                  background: isHovered
+                    ? `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(99, 102, 241, 0.28), transparent 70%)`
+                    : "none",
+                }}
+              />
 
-              {/* 2. Cyber Corner Brackets */}
-              <div className="absolute -top-3 -left-3 w-10 h-10 border-t-4 border-l-4 border-blue-500 rounded-tl-2xl z-20 transition-all duration-500 group-hover:-translate-x-1 group-hover:-translate-y-1 opacity-90" />
-              <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b-4 border-r-4 border-purple-500 rounded-br-2xl z-20 transition-all duration-500 group-hover:translate-x-1 group-hover:translate-y-1 opacity-90" />
+              {/* 2. Majestic Sun Rays / Solar God-Rays (সূর্যের আলোক রশ্মি) */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
+                className="absolute -inset-20 sm:-inset-28 pointer-events-none -z-10"
+                style={{
+                  background:
+                    "repeating-conic-gradient(from 0deg at 50% 50%, rgba(99, 102, 241, 0.22) 0deg, transparent 6deg, rgba(251, 191, 36, 0.18) 12deg, transparent 18deg, rgba(59, 130, 246, 0.22) 24deg, transparent 30deg)",
+                  maskImage:
+                    "radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 70%)",
+                  WebkitMaskImage:
+                    "radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 70%)",
+                }}
+              />
 
-              {/* 3. Razor-Sharp Photo Card */}
-              <div className="relative z-10 w-full h-full p-2.5 rounded-[2.5rem] bg-white dark:bg-[#111726] border border-slate-200/90 dark:border-white/15 shadow-2xl transition-transform duration-500 group-hover:scale-[1.01] flex items-center justify-center overflow-hidden">
+              {/* 3. Radiant Solar Flare Core (Warm Amber & Indigo Sunlight Corona) */}
+              <div
+                className="absolute -top-12 -inset-x-8 h-[120%] pointer-events-none -z-10 opacity-60 dark:opacity-75 blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 70% 50% at 50% 15%, rgba(251, 191, 36, 0.22) 0%, rgba(99, 102, 241, 0.20) 45%, transparent 75%)",
+                }}
+              />
+
+              {/* 4. Ambient Aura Backdrop */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/25 via-indigo-600/30 to-amber-500/15 rounded-[2.5rem] opacity-50 dark:opacity-65 blur-2xl group-hover:opacity-85 transition-all duration-500 -z-10 pointer-events-none" />
+
+              {/* 5. Razor-Sharp Photo Card */}
+              <div className="relative z-10 w-full h-full p-2.5 rounded-[2.5rem] bg-white/95 dark:bg-[#111726]/95 backdrop-blur-xl border border-slate-200/90 dark:border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-transform duration-500 group-hover:scale-[1.01] flex items-center justify-center overflow-hidden">
                 <Image
                   src={meImg}
                   alt="Md Samim Hosen — Full Stack Developer"
@@ -196,12 +250,18 @@ const Hero: React.FC = () => {
                 />
               </div>
 
-              {/* 4. Floating Glass Badge: 10+ Projects */}
+              {/* 6. Floating Glass Badge: 20+ Projects with Gentle Floating Bob */}
               <motion.div
                 initial={{ y: 25, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="absolute -bottom-6 -left-6 sm:-left-8 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl px-4 py-3 rounded-2xl border border-slate-200/80 dark:border-white/15 shadow-2xl group-hover:-translate-y-1.5 transition-transform duration-500"
+                animate={{
+                  y: [0, -6, 0],
+                  opacity: 1,
+                }}
+                transition={{
+                  opacity: { delay: 0.6, duration: 0.6 },
+                  y: { repeat: Infinity, duration: 4.2, ease: "easeInOut" },
+                }}
+                className="absolute -bottom-6 -left-6 sm:-left-8 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl px-4 py-3 rounded-2xl border border-slate-200/90 dark:border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.16)] transition-all duration-300"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-11 h-11 flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl text-white shadow-lg shadow-blue-500/30">
@@ -218,12 +278,18 @@ const Hero: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* 5. Floating Glass Badge: Full-Stack Beacon */}
+              {/* 7. Floating Glass Badge: Full-Stack Beacon with Gentle Floating Bob */}
               <motion.div
                 initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.75, duration: 0.6 }}
-                className="absolute -top-5 -right-4 sm:-right-6 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl px-4 py-2.5 rounded-2xl border border-slate-200/80 dark:border-white/15 shadow-2xl group-hover:translate-y-1.5 transition-transform duration-500"
+                animate={{
+                  y: [0, 5, 0],
+                  opacity: 1,
+                }}
+                transition={{
+                  opacity: { delay: 0.75, duration: 0.6 },
+                  y: { repeat: Infinity, duration: 4.8, ease: "easeInOut", delay: 1 },
+                }}
+                className="absolute -top-5 -right-4 sm:-right-6 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl px-4 py-2.5 rounded-2xl border border-slate-200/90 dark:border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.16)] transition-all duration-300"
               >
                 <div className="flex items-center gap-2.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
