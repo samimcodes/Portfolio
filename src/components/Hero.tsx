@@ -17,7 +17,7 @@ import { SiFiverr } from "react-icons/si";
 import meImg from "@/assets/me.png";
 
 const techStack = [
-  "Next.js 15",
+  "Next.js 16",
   "React 19",
   "TypeScript",
   "Tailwind CSS",
@@ -68,9 +68,9 @@ const Hero: React.FC = () => {
 
             {/* Monumental Radiant Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.85rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-6">
-              Building scalable web apps &amp;{" "}
+              Software Engineer &amp;{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 font-extrabold">
-                modern architectures.
+                Full Stack Developer.
               </span>
             </h1>
 
