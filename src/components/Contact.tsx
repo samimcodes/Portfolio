@@ -293,11 +293,10 @@ const Contact: React.FC = () => {
                         type="button"
                         key={type}
                         onClick={() => setSelectedType(type)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 border ${
-                          isSelected
+                        className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 border ${isSelected
                             ? "bg-indigo-600 text-white border-indigo-600 shadow-sm shadow-indigo-500/20"
                             : "bg-white dark:bg-white/5 text-slate-700 dark:text-zinc-300 border-slate-200/80 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20"
-                        }`}
+                          }`}
                       >
                         {type}
                       </button>
@@ -462,11 +461,10 @@ const Contact: React.FC = () => {
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -5 }}
-                      className={`flex items-start gap-2.5 p-4 rounded-xl text-xs font-medium ${
-                        status.type === "success"
+                      className={`flex items-start gap-2.5 p-4 rounded-xl text-xs font-medium ${status.type === "success"
                           ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30"
                           : "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20"
-                      }`}
+                        }`}
                     >
                       {status.type === "success" ? (
                         <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />

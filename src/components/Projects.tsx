@@ -4,12 +4,11 @@ import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, Layers, X, CheckCircle2, ShieldCheck, Cpu } from "lucide-react";
-import img6 from "@/assets/1.png";
+import img1 from "@/assets/1.jpg";
+import img2 from "@/assets/2.jpg";
+import img3 from "@/assets/3.png";
 import img4 from "@/assets/4.png";
 import img5 from "@/assets/5.png";
-import img1 from "@/assets/6.png";
-import img2 from "@/assets/2.png";
-import img3 from "@/assets/3.png";
 
 interface Project {
   id: number;
@@ -61,35 +60,11 @@ const projects: Project[] = [
     id: 2,
     featured: true,
     category: "SaaS",
-    title: "ContestHub — Contest Management & Payments",
-    tagline: "Multi-Role Dashboards with Automated Stripe Billing",
-    domain: "contests-hub.netlify.app",
-    description: "A comprehensive contest platform with role-based access control (Admin, Creator, Participant), automated Stripe payments, live countdown timers, and React Query caching.",
-    image: img4,
-    tech: ["React.js", "React Query", "Node.js", "Express.js", "MongoDB", "Stripe API"],
-    metrics: "Stripe Payment Gateway • Role-Based Guards",
-    repo: "https://github.com/samimcodes/ContestHub_Client",
-    demo: "https://contests-hub.netlify.app/",
-    architecture: {
-      overview: "SaaS architecture featuring role-based access control (RBAC), webhook-driven Stripe payment lifecycle, and query cache invalidation.",
-      highlights: [
-        "Stripe webhook processing with idempotency guards to prevent duplicate charges",
-        "Role-guarded backend middleware protecting sensitive creator & admin routes",
-        "Optimistic UI updates and cache deduplication via React Query",
-      ],
-      challenges: "Ensuring zero duplicate charge transactions during concurrent traffic. Solved with atomic database writes and webhook idempotency checking.",
-      database: "MongoDB with compound indices for contest queries and user submissions.",
-    },
-  },
-  {
-    id: 3,
-    featured: true,
-    category: "SaaS",
     title: "CareerFlow — AI-Powered Job Search Platform",
     tagline: "Team Project • Kanban Pipeline & Gemini AI Integration",
     domain: "career-flow-six.vercel.app",
     description: "A collaborative team project for job seekers featuring drag-and-drop Kanban tracking, AI resume reviews, and Stripe subscriptions. My contribution focused on integrating the Google Gemini API for automated resume critique, architecting MongoDB application pipelines, and building reusable UI modules.",
-    image: img5,
+    image: img2,
     tech: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB", "Gemini AI", "Stripe"],
     metrics: "Team Project • Gemini AI & Kanban",
     repo: "https://github.com/samimcodes/careerflow-job-tracker",
@@ -106,13 +81,38 @@ const projects: Project[] = [
     },
   },
   {
+    id: 3,
+    featured: true,
+    category: "SaaS",
+    title: "ContestHub — Contest Management & Payments",
+    tagline: "Multi-Role Dashboards with Automated Stripe Billing",
+    domain: "contests-hub.netlify.app",
+    description: "A comprehensive contest platform with role-based access control (Admin, Creator, Participant), automated Stripe payments, live countdown timers, and React Query caching.",
+    image: img3,
+    tech: ["React.js", "React Query", "Node.js", "Express.js", "MongoDB", "Stripe API"],
+    metrics: "Stripe Payment Gateway • Role-Based Guards",
+    repo: "https://github.com/samimcodes/ContestHub_Client",
+    demo: "https://contests-hub.netlify.app/",
+    architecture: {
+      overview: "SaaS architecture featuring role-based access control (RBAC), webhook-driven Stripe payment lifecycle, and query cache invalidation.",
+      highlights: [
+        "Stripe webhook processing with idempotency guards to prevent duplicate charges",
+        "Role-guarded backend middleware protecting sensitive creator & admin routes",
+        "Optimistic UI updates and cache deduplication via React Query",
+      ],
+      challenges: "Ensuring zero duplicate charge transactions during concurrent traffic. Solved with atomic database writes and webhook idempotency checking.",
+      database: "MongoDB with compound indices for contest queries and user submissions.",
+    },
+  },
+
+  {
     id: 4,
     category: "Full-Stack",
     title: "HomeHero — Household Service Booking",
     tagline: "On-Demand Service Marketplace & Provider Reviews",
     domain: "homehero.netlify.app",
     description: "A responsive platform connecting homeowners with verified local service providers, featuring appointment scheduling and customer rating systems.",
-    image: img6,
+    image: img4,
     tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase Auth"],
     metrics: "Instant Booking • Verified Provider System",
     repo: "https://github.com/samimcodes/homehero-a10-client",
@@ -135,7 +135,7 @@ const projects: Project[] = [
     tagline: "E-Commerce with Expert Care Consultation",
     domain: "greennest.firebaseapp.com",
     description: "An interactive botanical platform with plant health consultations, specialist booking flows, and secure Firebase authentication.",
-    image: img2,
+    image: img5,
     tech: ["React.js", "Tailwind CSS", "Firebase Auth", "Express.js", "MongoDB"],
     metrics: "Care Consultation • Secure Profile Management",
     repo: "https://github.com/samimcodes/assinment-09-greennest-project",
@@ -151,29 +151,7 @@ const projects: Project[] = [
       database: "MongoDB storing plant taxonomy, order records, and user preferences.",
     },
   },
-  {
-    id: 6,
-    category: "Full-Stack",
-    title: "Nature's Platter — Organic Food Delivery",
-    tagline: "Next.js Web Storefront with NextAuth & Fast Checkout",
-    domain: "natures-platter.vercel.app",
-    description: "A fast, lightweight organic food ordering application built with Next.js App Router, NextAuth authentication, and MongoDB catalog management.",
-    image: img3,
-    tech: ["Next.js", "NextAuth", "Tailwind CSS", "MongoDB", "Vercel"],
-    metrics: "Next.js App Router • Fast SSG/SSR Pages",
-    repo: "https://github.com/samimcodes/next-js-client",
-    demo: "https://next-js-client-vqte.vercel.app/",
-    architecture: {
-      overview: "Server-rendered Next.js commerce application prioritizing sub-second initial paint times and search engine accessibility.",
-      highlights: [
-        "Hybrid SSR and static generation caching product routes on the edge",
-        "NextAuth OAuth integration with automated session refresh",
-        "Accessible cart state with local storage hydration and sync",
-      ],
-      challenges: "Eliminating layout shifts on dynamic catalog loading. Solved using Next.js Image optimization and server component skeletons.",
-      database: "MongoDB with indexed SKU and category collections.",
-    },
-  },
+
 ];
 
 const categories = ["Featured", "All", "SaaS", "Real-Time", "Full-Stack"] as const;
@@ -186,8 +164,8 @@ const Projects: React.FC = () => {
     activeTab === "Featured"
       ? projects.filter((p) => p.featured)
       : activeTab === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeTab);
+        ? projects
+        : projects.filter((p) => p.category === activeTab);
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
@@ -212,11 +190,10 @@ const Projects: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                  activeTab === cat
-                    ? "bg-slate-900 dark:bg-white text-white dark:text-slate-950 shadow-sm"
-                    : "text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
-                }`}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${activeTab === cat
+                  ? "bg-slate-900 dark:bg-white text-white dark:text-slate-950 shadow-sm"
+                  : "text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
+                  }`}
               >
                 {cat}
               </button>
@@ -308,27 +285,15 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right: Large Screenshot in Clean Browser Frame (6 cols) */}
+                {/* Right: Project Showcase Image (6 cols) */}
                 <div className="lg:col-span-6 rounded-2xl overflow-hidden bg-slate-100 dark:bg-[#070910] border border-black/[0.06] dark:border-white/[0.08] shadow-md group-hover:shadow-xl transition-all">
-                  {/* Modern Browser Chrome Header */}
-                  <div className="px-4 py-2.5 bg-slate-200/60 dark:bg-[#0d101a] border-b border-black/[0.06] dark:border-white/[0.08] flex items-center gap-3">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-zinc-700 inline-block" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-zinc-700 inline-block" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-zinc-700 inline-block" />
-                    </div>
-                    <div className="flex-1 max-w-[200px] mx-auto py-0.5 px-3 rounded-md bg-white dark:bg-[#070910] border border-black/[0.06] dark:border-white/[0.08] text-center font-mono text-[10px] text-slate-500 dark:text-zinc-400 truncate">
-                      https://{project.domain}
-                    </div>
-                  </div>
-
                   <div className="relative aspect-[16/10] overflow-hidden bg-white dark:bg-[#070910]">
                     <Image
                       src={project.image}
                       alt={project.title}
                       quality={95}
                       sizes="(max-width: 1024px) 100vw, 550px"
-                      className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                     />
                   </div>
                 </div>
