@@ -90,14 +90,36 @@ const Header: React.FC = () => {
         className="fixed top-4 inset-x-0 z-50 pointer-events-none"
       >
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="pointer-events-auto w-full flex items-center justify-between px-5 sm:px-6 py-2.5 rounded-full sm:rounded-2xl bg-white/85 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/25 transition-all duration-300">
-            {/* Brand Mark */}
+          <div className="pointer-events-auto w-full flex items-center justify-between px-5 sm:px-6 py-2 rounded-full bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/25 transition-all duration-300">
+            {/* Ultra-Premium Glowing, Breathing & Dynamic Color-Shifting Brand Mark */}
             <a
               href="#home"
-              className="flex items-center gap-2.5 font-bold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="relative group flex items-center py-1 transition-transform duration-300 hover:scale-105"
+              aria-label="Back to Top"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-              <span>Samim</span>
+              {/* Sharp, Razor-Clean Dynamic Color-Shifting & Pulsing "Samim" Text (জ্বলবে, নিভবে ও রঙ বদলাবে - কোনো ঘোলাটে ব্লার ছাড়া) */}
+              <motion.span
+                animate={{
+                  color: [
+                    "#2563eb", // Royal Blue
+                    "#6366f1", // Indigo (নিভবে)
+                    "#8b5cf6", // Purple (জ্বলবে)
+                    "#ec4899", // Rose Pink (নিভবে)
+                    "#06b6d4", // Cyan (জ্বলবে)
+                    "#10b981", // Emerald (নিভবে)
+                    "#2563eb", // Royal Blue (জ্বলবে)
+                  ],
+                  opacity: [1, 0.65, 1, 0.65, 1, 0.65, 1], // সরাসরি টেক্সটটাই জ্বলবে ও নিভবে
+                }}
+                transition={{
+                  duration: 4.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="font-extrabold text-base sm:text-lg tracking-tight select-none inline-block"
+              >
+                Samim
+              </motion.span>
             </a>
 
             {/* Desktop Links */}
