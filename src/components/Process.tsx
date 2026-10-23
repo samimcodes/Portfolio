@@ -2,75 +2,143 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Compass, Layout, Cpu, Rocket, CheckCircle2 } from "lucide-react";
+import {
+  Compass,
+  Layout,
+  Cpu,
+  Rocket,
+  CheckCircle2,
+  Sparkles,
+  ArrowRight,
+  ShieldCheck,
+  Clock,
+  Code,
+  HeartHandshake,
+} from "lucide-react";
 
 interface StepItem {
   step: string;
+  badge: string;
   icon: React.ElementType;
   title: string;
+  focus: string;
   description: string;
   deliverables: string[];
+  accent: {
+    color: string;
+    border: string;
+    glow: string;
+    gradient: string;
+  };
 }
 
 const steps: StepItem[] = [
   {
     step: "01",
+    badge: "Milestone 1",
     icon: Compass,
     title: "Discovery & Planning",
-    description: "Aligning on core business requirements, user flows, technical feasibility, and realistic delivery milestones.",
-    deliverables: ["Scope & User Stories", "Architecture Roadmap"],
+    focus: "Scope & Feasibility",
+    description:
+      "Aligning on core business goals, target user flows, technical stack feasibility, and setting clear sprint milestones.",
+    deliverables: ["Product Scope & User Stories", "Architecture Roadmap", "Tech Stack Finalization"],
+    accent: {
+      color: "text-blue-600 dark:text-blue-400",
+      border: "border-blue-100 dark:border-blue-500/20",
+      glow: "hover:shadow-[0_20px_45px_rgba(59,130,246,0.18)] dark:hover:shadow-[0_20px_50px_rgba(59,130,246,0.22)]",
+      gradient: "from-blue-500/20 via-blue-500/5 to-transparent",
+    },
   },
   {
     step: "02",
+    badge: "Milestone 2",
     icon: Layout,
     title: "Design & Architecture",
-    description: "Designing normalized database schemas (PostgreSQL / Prisma), modular APIs, and responsive, accessible UI flows.",
-    deliverables: ["DB Schema & ERD", "API Contracts & UX Flows"],
+    focus: "Schemas & UI Contracts",
+    description:
+      "Structuring normalized database models (PostgreSQL / Prisma), resilient REST API contracts, and responsive UX interfaces.",
+    deliverables: ["DB Schema & ERD Models", "REST API Endpoint Specs", "High-Fidelity Component UX"],
+    accent: {
+      color: "text-indigo-600 dark:text-indigo-400",
+      border: "border-indigo-100 dark:border-indigo-500/20",
+      glow: "hover:shadow-[0_20px_45px_rgba(99,102,241,0.18)] dark:hover:shadow-[0_20px_50px_rgba(99,102,241,0.22)]",
+      gradient: "from-indigo-500/20 via-indigo-500/5 to-transparent",
+    },
   },
   {
     step: "03",
+    badge: "Milestone 3",
     icon: Cpu,
-    title: "Development & Testing",
-    description: "Writing clean, type-safe Next.js & TypeScript code with component modularization and continuous iterative testing.",
-    deliverables: ["Type-Safe Full-Stack", "Performance & Clean Code"],
+    title: "Engineering & Testing",
+    focus: "Type-Safe Full-Stack",
+    description:
+      "Writing clean, type-safe Next.js & TypeScript code, implementing state management, robust authentication, and thorough testing.",
+    deliverables: ["Type-Safe Full-Stack System", "Modular Component Library", "Security & Auth Verification"],
+    accent: {
+      color: "text-purple-600 dark:text-purple-400",
+      border: "border-purple-100 dark:border-purple-500/20",
+      glow: "hover:shadow-[0_20px_45px_rgba(168,85,247,0.18)] dark:hover:shadow-[0_20px_50px_rgba(168,85,247,0.22)]",
+      gradient: "from-purple-500/20 via-purple-500/5 to-transparent",
+    },
   },
   {
     step: "04",
+    badge: "Milestone 4",
     icon: Rocket,
-    title: "Deployment & Support",
-    description: "Configuring automated cloud CI/CD pipelines, optimizing Core Web Vitals, and ensuring reliable zero-downtime releases.",
-    deliverables: ["CI/CD Cloud Deploy", "Lighthouse 95+ Audit"],
+    title: "Deployment & Scale",
+    focus: "CI/CD & Lighthouse 95+",
+    description:
+      "Automating cloud deployment pipelines (Vercel / VPS), fine-tuning Core Web Vitals, and providing post-launch handover support.",
+    deliverables: ["Automated CI/CD Deployment", "Core Web Vitals 95+ Audit", "Codebase Handover & Docs"],
+    accent: {
+      color: "text-emerald-600 dark:text-emerald-400",
+      border: "border-emerald-100 dark:border-emerald-500/20",
+      glow: "hover:shadow-[0_20px_45px_rgba(16,185,129,0.18)] dark:hover:shadow-[0_20px_50px_rgba(16,185,129,0.22)]",
+      gradient: "from-emerald-500/20 via-emerald-500/5 to-transparent",
+    },
   },
+];
+
+const guarantees = [
+  { icon: Clock, text: "Transparent Milestones & Weekly Demos" },
+  { icon: Code, text: "100% Full Source Code Ownership" },
+  { icon: ShieldCheck, text: "Strict Quality & Zero Data Leaks" },
+  { icon: HeartHandshake, text: "Dedicated Post-Launch Support" },
 ];
 
 const Process: React.FC = () => {
   return (
-    <section id="process" className="py-24 relative overflow-hidden">
-      <div className="container max-w-6xl mx-auto px-6">
+    <section id="process" className="py-24 sm:py-32 relative overflow-hidden">
+      {/* Background Ambient Radial Highlights */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[750px] h-[350px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+
+      <div className="container max-w-6xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 sm:mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-500/20 mb-3">
-              Work Method
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200/60 dark:border-indigo-500/20 text-xs font-semibold uppercase tracking-[0.18em] text-[#6366F1] dark:text-[#818CF8] mb-3">
+              <Sparkles size={13} className="text-indigo-500 animate-pulse" />
+              <span>Work Method</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-zinc-50">
               How I Deliver Value
             </h2>
-            <p className="text-slate-600 dark:text-zinc-400 max-w-xl mx-auto mt-2 text-sm sm:text-base">
+            <p className="text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto mt-3 text-base sm:text-lg leading-relaxed">
               A transparent, engineering-grade roadmap to transform complex ideas into reliable, scalable software.
             </p>
           </motion.div>
         </div>
 
         {/* Process Cards Grid with Connected Pipeline */}
-        <div className="relative">
-          {/* Horizontal Connection Pipeline for Desktop */}
-          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-indigo-500/20 via-purple-500/30 to-indigo-500/20 dark:from-indigo-500/30 dark:via-purple-500/40 dark:to-indigo-500/30 -z-0" />
+        <div className="relative mb-14">
+          {/* Subtle Pipeline Line for Desktop */}
+          <div className="hidden lg:block absolute top-[52px] left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-blue-500/20 via-indigo-500/30 to-emerald-500/20 -z-0" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
             {steps.map((item, idx) => {
@@ -78,16 +146,23 @@ const Process: React.FC = () => {
               return (
                 <motion.div
                   key={item.step}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 22 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="group relative p-6 rounded-3xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-xl border border-black/[0.06] dark:border-white/10 hover:border-indigo-500/40 dark:hover:border-indigo-500/50 shadow-sm hover:shadow-[0_16px_35px_rgba(99,102,241,0.14)] transition-all duration-300 flex flex-col justify-between"
+                  className={`group relative p-6 sm:p-7 rounded-3xl bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl border border-black/[0.06] dark:border-white/10 hover:border-black/[0.12] dark:hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden ${item.accent.glow}`}
                 >
+                  {/* Subtle Top Gradient Accent on Hover */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.accent.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
+
                   <div>
                     {/* Top Step & Icon */}
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 flex items-center justify-center text-[#6366F1] dark:text-[#818CF8] group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                      <div
+                        className={`w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 border ${item.accent.border} flex items-center justify-center ${item.accent.color} group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm`}
+                      >
                         <Icon size={22} />
                       </div>
                       <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-zinc-400 border border-slate-200/60 dark:border-white/10 group-hover:border-indigo-500/40 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
@@ -95,26 +170,34 @@ const Process: React.FC = () => {
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 dark:text-zinc-100 mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {item.title}
-                    </h3>
+                    <div className="mb-2">
+                      <span className="text-[11px] font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider block">
+                        {item.focus}
+                      </span>
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
+                        {item.title}
+                      </h3>
+                    </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed mb-6">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed mb-6 font-normal">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Deliverables / Output Badges */}
-                  <div className="pt-4 border-t border-slate-100 dark:border-white/5 flex flex-col gap-1.5">
+                  <div className="pt-4 border-t border-slate-200/70 dark:border-white/[0.08] flex flex-col gap-2">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 dark:text-zinc-500">
-                      Key Deliverables
+                      Deliverables
                     </span>
                     {item.deliverables.map((del, dIdx) => (
                       <div
                         key={dIdx}
-                        className="flex items-center gap-1.5 text-[11px] font-medium text-slate-700 dark:text-zinc-300"
+                        className="flex items-center gap-2 text-xs font-medium text-slate-700 dark:text-zinc-300"
                       >
-                        <CheckCircle2 size={12} className="text-indigo-500 dark:text-indigo-400 shrink-0" />
+                        <CheckCircle2
+                          size={13}
+                          className="text-emerald-500 dark:text-emerald-400 shrink-0"
+                        />
                         <span className="truncate">{del}</span>
                       </div>
                     ))}
@@ -124,9 +207,41 @@ const Process: React.FC = () => {
             })}
           </div>
         </div>
+
+        {/* Client Guarantees Bar & CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="rounded-3xl p-6 sm:p-8 bg-slate-100/80 dark:bg-white/[0.02] border border-black/[0.05] dark:border-white/[0.06] backdrop-blur-xl flex flex-col lg:flex-row items-center justify-between gap-6"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full lg:w-auto">
+            {guarantees.map((g, idx) => {
+              const GIcon = g.icon;
+              return (
+                <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-zinc-300">
+                  <div className="w-6 h-6 rounded-lg bg-indigo-500/10 flex items-center justify-center shrink-0 text-indigo-600 dark:text-indigo-400">
+                    <GIcon size={14} />
+                  </div>
+                  <span className="font-medium">{g.text}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-zinc-200 text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all shrink-0 group w-full sm:w-auto justify-center"
+          >
+            <span>Start Your Project Roadmap</span>
+            <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Process;
+
