@@ -19,6 +19,7 @@ interface Project {
   domain: string;
   description: string;
   image: StaticImageData;
+  glowGradient: string;
   tech: string[];
   metrics: string;
   repo: string;
@@ -41,6 +42,7 @@ const projects: Project[] = [
     domain: "localinks.onrender.com",
     description: "A low-latency real-time location sharing platform with Socket.IO, PostgreSQL & Prisma for location history, custom geofences, and instant emergency broadcasts.",
     image: img1,
+    glowGradient: "from-cyan-500/30 via-blue-500/20 to-transparent",
     tech: ["Next.js", "TypeScript", "Socket.IO", "PostgreSQL", "Prisma ORM", "MapLibre GL"],
     metrics: "Low-latency WebSockets • Spatial Geofencing",
     repo: "https://github.com/samimcodes/live-location-platform",
@@ -65,6 +67,7 @@ const projects: Project[] = [
     domain: "career-flow-six.vercel.app",
     description: "A collaborative team project for job seekers featuring drag-and-drop Kanban tracking, AI resume reviews, and Stripe subscriptions. My contribution focused on integrating the Google Gemini API for automated resume critique, architecting MongoDB application pipelines, and building reusable UI modules.",
     image: img2,
+    glowGradient: "from-purple-500/35 via-indigo-500/20 to-transparent",
     tech: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB", "Gemini AI", "Stripe"],
     metrics: "Team Project • Gemini AI & Kanban",
     repo: "https://github.com/samimcodes/careerflow-job-tracker",
@@ -89,6 +92,7 @@ const projects: Project[] = [
     domain: "contests-hub.netlify.app",
     description: "A comprehensive contest platform with role-based access control (Admin, Creator, Participant), automated Stripe payments, live countdown timers, and React Query caching.",
     image: img3,
+    glowGradient: "from-amber-500/30 via-orange-500/20 to-transparent",
     tech: ["React.js", "React Query", "Node.js", "Express.js", "MongoDB", "Stripe API"],
     metrics: "Stripe Payment Gateway • Role-Based Guards",
     repo: "https://github.com/samimcodes/ContestHub_Client",
@@ -113,6 +117,7 @@ const projects: Project[] = [
     domain: "homehero.netlify.app",
     description: "A responsive platform connecting homeowners with verified local service providers, featuring appointment scheduling and customer rating systems.",
     image: img4,
+    glowGradient: "from-indigo-500/30 via-blue-500/20 to-transparent",
     tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase Auth"],
     metrics: "Instant Booking • Verified Provider System",
     repo: "https://github.com/samimcodes/homehero-a10-client",
@@ -136,6 +141,7 @@ const projects: Project[] = [
     domain: "greennest.firebaseapp.com",
     description: "An interactive botanical platform with plant health consultations, specialist booking flows, and secure Firebase authentication.",
     image: img5,
+    glowGradient: "from-emerald-500/30 via-teal-500/20 to-transparent",
     tech: ["React.js", "Tailwind CSS", "Firebase Auth", "Express.js", "MongoDB"],
     metrics: "Care Consultation • Secure Profile Management",
     repo: "https://github.com/samimcodes/assinment-09-greennest-project",
@@ -285,17 +291,43 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right: Project Showcase Image (6 cols) */}
-                <div className="lg:col-span-6 rounded-2xl overflow-hidden bg-slate-100 dark:bg-[#070910] border border-black/[0.06] dark:border-white/[0.08] shadow-md group-hover:shadow-xl transition-all">
-                  <div className="relative aspect-[16/10] overflow-hidden bg-white dark:bg-[#070910]">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      quality={95}
-                      sizes="(max-width: 1024px) 100vw, 550px"
-                      className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                    />
-                  </div>
+                {/* Right: Project Showcase Image with Ambient Halo & Interactive Pill (6 cols) */}
+                <div className="lg:col-span-6 relative group/mockup">
+                  {/* Ambient Dynamic Halo Glow behind the artwork */}
+                  <div
+                    className={`absolute -inset-2.5 rounded-3xl bg-gradient-to-r ${project.glowGradient} opacity-30 group-hover/mockup:opacity-90 blur-2xl transition-all duration-700 pointer-events-none -z-10`}
+                  />
+
+                  {/* Clickable Image Showcase leading directly to Live Demo */}
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block rounded-2xl overflow-hidden bg-slate-950 border border-slate-200/90 dark:border-white/10 shadow-lg group-hover/mockup:shadow-2xl hover:border-indigo-500/50 dark:hover:border-white/25 transition-all duration-500"
+                    aria-label={`Open live demo of ${project.title}`}
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-950 flex items-center justify-center">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        quality={95}
+                        priority={project.featured}
+                        sizes="(max-width: 1024px) 100vw, 550px"
+                        className="w-full h-full object-cover object-center group-hover/mockup:scale-[1.035] transition-transform duration-700 ease-out"
+                      />
+
+                      {/* Subtle Vignette Gradient Overlay at Bottom */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/mockup:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                      {/* Interactive Floating Pill in Center on Hover */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/mockup:opacity-100 transition-all duration-300 pointer-events-none">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/85 dark:bg-white text-white dark:text-slate-950 text-xs font-bold shadow-2xl backdrop-blur-md transform translate-y-2 group-hover/mockup:translate-y-0 transition-all duration-300">
+                          <span>Explore Live Product</span>
+                          <ArrowUpRight size={14} />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </motion.article>
             ))}
