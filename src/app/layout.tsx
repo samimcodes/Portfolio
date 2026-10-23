@@ -10,7 +10,7 @@ const fontSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://samim01-portfolio.netlify.app"),
+  metadataBase: new URL("https://iamsamim.vercel.app"),
   title: "Md Samim Hosen | Software Engineer & Full Stack Developer",
   description:
     "Software Engineer and Full Stack Developer at JEVXO specializing in Next.js, TypeScript, PostgreSQL, Prisma ORM, and high-performance web applications.",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Web Developer Bangladesh",
     "Software Engineer",
   ],
-  authors: [{ name: "Md Samim Hosen", url: "https://samim01-portfolio.netlify.app" }],
+  authors: [{ name: "Md Samim Hosen", url: "https://iamsamim.vercel.app" }],
   creator: "Md Samim Hosen",
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Md Samim Hosen | Full Stack Developer",
     description:
       "Full Stack Developer at JEVXO building scalable web applications with Next.js, TypeScript, PostgreSQL, and Prisma ORM.",
-    url: "https://samim01-portfolio.netlify.app",
+    url: "https://iamsamim.vercel.app",
     siteName: "Md Samim Hosen Portfolio",
     images: [
       {
