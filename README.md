@@ -1,191 +1,145 @@
 <div align="center">
 
-<img src="public/desktop-preview.png" alt="Samim Portfolio" width="800" />
+<img src="public/desktop-preview.png" alt="Md Samim Hosen Portfolio Showcase" width="850" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" />
 
-# 👋 Hi, I'm Samim
+<br /><br />
 
-### MERN-Stack Developer | Building Modern Web Experiences
-
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+# ⚡ Md Samim Hosen
+### **Software Engineer & Full Stack Developer**
+**Full Stack Developer at [JEVXO](https://jevxo.com) · Diploma in Computer Technology at Rangpur Polytechnic Institute**
 
 <br />
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-samim01--portfolio.netlify.app-blue?style=for-the-badge)](https://samim01-portfolio.netlify.app/)
-[![Download CV](https://img.shields.io/badge/📄_Download-My_CV-8B5CF6?style=for-the-badge)](https://drive.google.com/file/d/1liEkw82D8zQL0-A0BIqw-PK5l7UBEo7C/view?usp=sharing)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.4.2-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Prisma ORM](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+
+<br />
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Portfolio-iamsamim.vercel.app-blue?style=for-the-badge)](https://iamsamim.vercel.app/)
+[![Download Resume](https://img.shields.io/badge/📄_Download_Resume-Google_Drive-8B5CF6?style=for-the-badge)](https://drive.google.com/file/d/1liEkw82D8zQL0-A0BIqw-PK5l7UBEo7C/view?usp=sharing)
+[![Fiverr Order](https://img.shields.io/badge/⚡_Fiverr_Marketplace-Escrow_Protected-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/samim_io)
 
 </div>
 
 ---
 
-## ⚙️ Local Setup
+## 📖 Overview
 
+Welcome to the official repository of my personal portfolio. Built with an **Apple / Linear / Vercel-inspired luxury dark aesthetic**, this portfolio showcases production full-stack systems, architectural trade-offs, interactive 3D physics, and verified client solutions.
+
+It is engineered with **Next.js 16 (App Router & Turbopack)**, **React 19**, and strict **TypeScript**, delivering sub-second load times, dynamic micro-interactions via **Framer Motion**, and a zero-clutter modern design system.
+
+---
+
+## 🛠️ Core Engineering Stack
+
+<div align="center">
+
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend Architecture** | Next.js 16 (App Router, Server Actions, SSR/SSG), React 19, TypeScript, Tailwind CSS, Framer Motion |
+| **Backend & APIs** | Node.js, Express.js, RESTful API Design, Socket.IO (WebSockets), JWT Authentication |
+| **Data & Persistence** | PostgreSQL (Relational), Prisma ORM (Type-Safe Schemas & Migrations), MongoDB |
+| **DevOps & Infrastructure** | Turbopack, Git & GitHub, Docker, Vercel, Render, Postman |
+| **Security & Validation** | Zod Schema Validation, React Hook Form, Honeypot Anti-Spam, Client NDA Compliance |
+
+</div>
+
+---
+
+## 💼 Featured Production Case Studies
+
+### 1. 🛰️ [LocalLink — Real-Time Location Sharing & Geofencing](https://github.com/samimcodes)
+> Low-latency real-time GPS tracking platform built with **Socket.IO**, **PostgreSQL**, and **Prisma ORM** featuring live vector maps (MapLibre GL), custom geofencing, and instant SOS broadcasts.
+* **Tech:** Next.js 16 · TypeScript · Socket.IO · PostgreSQL · Prisma ORM · MapLibre GL
+* **Highlights:** Sub-100ms WebSocket synchronization, spatial geofence detection, spatial query optimization.
+
+---
+
+### 2. 🚀 [CareerFlow — SaaS Job Application Pipeline](https://github.com/samimcodes/careerflow-job-tracker)
+> Full-stack SaaS platform featuring a drag-and-drop Kanban pipeline, AI-assisted cover letter & feedback generator (Gemini API), Stripe subscription billing, and real-time conversion metrics.
+* **Tech:** React 19 · Redux · Node.js · Express · MongoDB · Stripe API · Gemini AI
+* **Highlights:** Multi-tier recurring subscriptions, role-based access, and drag-and-drop board state synchronization.
+
+---
+
+### 3. 🏆 [ContestHub — Enterprise Contest Platform](https://github.com/samimcodes/ContestHub_Client)
+> Multi-role contest platform (Admin, Creator, Participant) with secure Stripe checkout, dynamic leaderboard calculation, and administrative approval workflows.
+* **Tech:** React · Tailwind CSS · Node.js · Express · MongoDB · Firebase Auth · Stripe
+
+---
+
+### 4. 🏠 [HomeHero — Household Service Marketplace](https://github.com/samimcodes/homehero-a10-client)
+> Two-sided service booking marketplace with real-time slot validation, customer rating aggregation, and verified service vendor profiles.
+* **Tech:** React · Tailwind CSS · Node.js · Express · MongoDB · Firebase Auth
+
+---
+
+## ✨ Architectural & Design Highlights
+
+* **3D Morphing Identity Loop & Gyroscope Physics:** Smooth dual-phase portrait transition with holographic scanline and mouse-driven tilt physics.
+* **Symmetrical 50/50 Bento Grids:** Balanced visual architecture across Technical Stack, Process, and Contact sections for scannability.
+* **Zero FOUC Theme Engine:** Inline `<head>` script preventing theme flash on hard refresh with seamless Light/Dark toggle.
+* **Enterprise Contact Pipeline:** Zod-validated multi-step inquiry form with automated honeypot bot-defense and direct WhatsApp fallback.
+* **Deep-Dive System Architecture Modals:** Each case study includes interactive architecture breakdowns covering database models, challenges, and engineering trade-offs.
+
+---
+
+## ⚙️ Local Development Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/samimcodes/Portfolio.git
+cd Portfolio
+```
+
+### 2. Install dependencies
 ```bash
 npm install
-copy .env.example .env
+```
+
+### 3. Configure environment variables
+Create a `.env.local` file in the root directory:
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+### 4. Run the development server
+```bash
 npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Add your EmailJS values to `.env` before testing the contact form:
-
-```env
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
+### 5. Production Build
+```bash
+npm run build
+npm run start
 ```
 
-Never commit `.env`; it is ignored by git.
-
 ---
 
-## 🚀 About Me
+## 📬 Direct Contact & Collaboration
 
-I'm a passionate **Full-Stack Developer** from **Rangpur, Bangladesh**, specializing in the **MERN Stack**. I build modern, scalable web applications with **React**, **Next.js**, and **Node.js** — focused on creating intuitive user experiences and performant backend systems.
-
-- 🔭 Currently working on **Full-Stack SaaS applications**
-- 🌱 Always learning and exploring new technologies
-- 💼 Open to **freelance projects**, **full-time roles**, and **collaborations**
-- ⚡ 10+ projects completed and counting
-
----
-
-## 🛠️ Tech Stack
+I am actively available for **Full-Stack Engineering roles**, **SaaS MVP partnerships**, and **Freelance projects**.
 
 <div align="center">
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
-
-</div>
-
----
-
-## 💼 Featured Projects
-
-### 1. 🚀 CareerFlow — SaaS Job Application Tracker
-
-> Full-stack SaaS platform with drag-and-drop Kanban pipeline, AI-powered feedback (Gemini API), Stripe subscriptions, and real-time analytics.
-
-**Tech:** React · Redux · Node.js · Express · MongoDB · Stripe · AI API
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://career-flow-six.vercel.app/)
-[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=flat-square&logo=github)](https://github.com/samimcodes/careerflow-job-tracker)
-
----
-
-### 2. 🏆 Contest Hub — Contest Management Platform
-
-> Full-stack platform with role-based dashboards (Admin, Creator, User), Stripe payments, contest approval workflow, and leaderboard system.
-
-**Tech:** React · Tailwind · Node.js · Express · MongoDB · Firebase Auth · JWT · Stripe
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://contests-hub.netlify.app/)
-[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=flat-square&logo=github)](https://github.com/samimcodes/ContestHub_Client)
-
----
-
-### 3. 🏠 HomeHero — Service Finder
-
-> Connects users with trusted local service providers. Features booking management, rating system, and secure JWT authentication.
-
-**Tech:** React · Tailwind · Node.js · Express · MongoDB · Firebase · JWT
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://homehero-ass10.netlify.app/)
-[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=flat-square&logo=github)](https://github.com/samimcodes/homehero-a10-client)
-
----
-
-### 4. 🌿 GreenNest — Plant Care Platform
-
-> Plant care platform with secure login, profile management, and consultation bookings.
-
-**Tech:** React · Tailwind · Firebase · Express · MongoDB
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://asinment-8.firebaseapp.com/)
-[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=flat-square&logo=github)](https://github.com/samimcodes/assinment-09-greennest-project)
-
----
-
-### 5. 🍽️ Nature's Platter — Next.js App
-
-> Next.js application with NextAuth authentication and product management.
-
-**Tech:** Next.js · NextAuth · Tailwind · MongoDB · Vercel
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://next-js-client-vqte.vercel.app/)
-[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=flat-square&logo=github)](https://github.com/samimcodes/next-js-client)
-
----
-
-### 6. 📱 AppGalaxy — App Showcase Platform
-
-> Browse apps, view details, install/uninstall apps, and monitor performance through interactive charts.
-
-**Tech:** React · Tailwind · Firebase · Recharts · React Router
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://assinment-08-productive-apps.netlify.app/)
-[![GitHub](https://img.shields.io/badge/Source-Code-181717?style=flat-square&logo=github)](https://github.com/samimcodes/productive-apps)
-
----
-
-## ✨ Portfolio Features
-
-<div align="center">
-
-|     | Feature                  | Description                                                        |
-| --- | ------------------------ | ------------------------------------------------------------------ |
-| 🎨  | **Premium Design**       | Glassmorphism, gradient accents, floating badges & shimmer effects |
-| 🌙  | **Dark / Light Mode**    | Persistent theme toggle with smooth transitions                    |
-| 🎬  | **Smooth Animations**    | Scroll-triggered reveals & micro-interactions via Framer Motion    |
-| ✉️  | **Working Contact Form** | EmailJS integration with Zod validation                            |
-| 📱  | **Fully Responsive**     | Looks stunning on every device                                     |
-| ✨  | **Canvas Particles**     | Interactive floating particle background                           |
-| 🚀  | **Blazing Fast**         | Vite-powered, optimized production builds                          |
-
-</div>
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-|              Desktop View              |             Mobile View              |
-| :------------------------------------: | :----------------------------------: |
-| ![Desktop](public/desktop-preview.png) | ![Mobile](public/mobile-preview.png) |
-
-</div>
-
----
-
-## 📬 Let's Connect
-
-<div align="center">
-
-I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-+880_1743282144-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/8801743282144)
+[![Fiverr](https://img.shields.io/badge/Fiverr-samim__io-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/samim_io)
+[![Email](https://img.shields.io/badge/Email-mdsamimhoen827@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mdsamimhoen827@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-samim01-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samim01/)
+[![GitHub](https://img.shields.io/badge/GitHub-samimcodes-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/samimcodes)
 
 <br />
 
-[![Email](https://img.shields.io/badge/mdsamimhoen827@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mdsamimhoen827@gmail.com)
-[![Fiverr](https://img.shields.io/badge/Fiverr-samim__io-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/samim_io)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Samim-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samim01/)
-[![GitHub](https://img.shields.io/badge/GitHub-samimcodes-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/samimcodes)
-[![Facebook](https://img.shields.io/badge/Facebook-Samim-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/md.samim.khan.22906)
-[![Phone](https://img.shields.io/badge/📞_+880--1743282144-25D366?style=for-the-badge)](tel:+8801743282144)
+📍 **Rangpur, Bangladesh (UTC+6) · Open to Worldwide Remote Opportunities**
 
 </div>
 
@@ -193,8 +147,8 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 
 <div align="center">
 
-### ⭐ If you like my work, consider giving this repo a star!
+⭐ **If you find this portfolio or its architecture inspiring, please consider starring the repository!**
 
-**Made with ❤️ by [Samim](https://github.com/samimcodes) from Bangladesh 🇧🇩**
+*Engineered with precision by [Md Samim Hosen](https://github.com/samimcodes).*
 
 </div>

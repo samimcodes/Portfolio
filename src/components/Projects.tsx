@@ -264,17 +264,17 @@ const Projects: React.FC = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-black dark:bg-white dark:hover:bg-zinc-200 text-white dark:text-slate-950 text-xs font-bold shadow-sm transition-all"
+                      className="group/btn relative inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:via-indigo-500 hover:to-blue-500 text-white text-xs font-bold shadow-md shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all overflow-hidden"
                     >
                       <span>Live Demo</span>
-                      <ArrowUpRight size={14} />
+                      <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </a>
 
                     <a
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 dark:bg-white/[0.05] dark:hover:bg-white/[0.09] border border-black/[0.08] dark:border-white/[0.08] text-slate-800 dark:text-zinc-200 text-xs font-semibold shadow-sm transition-all"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200/80 dark:bg-white/[0.05] dark:hover:bg-white/[0.1] border border-slate-200/80 dark:border-white/[0.08] text-slate-800 dark:text-zinc-200 text-xs font-semibold shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
                     >
                       <Github size={14} />
                       <span>GitHub</span>
@@ -283,7 +283,7 @@ const Projects: React.FC = () => {
                     {project.architecture && (
                       <button
                         onClick={() => setActiveModalProject(project)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-indigo-500/10 hover:bg-indigo-500/20 text-[#6366F1] dark:text-[#818CF8] text-xs font-semibold transition-all border border-indigo-500/20"
+                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-indigo-50 hover:bg-indigo-100/80 dark:bg-indigo-500/10 dark:hover:bg-indigo-500/20 text-[#6366F1] dark:text-[#818CF8] text-xs font-semibold transition-all border border-indigo-200/60 dark:border-indigo-500/25 hover:scale-[1.02] active:scale-[0.98]"
                       >
                         <Layers size={13} />
                         <span>Architecture</span>
@@ -322,7 +322,7 @@ const Projects: React.FC = () => {
 
                       {/* Interactive Floating Pill in Center on Hover */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/mockup:opacity-100 transition-all duration-300 pointer-events-none">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/85 dark:bg-white text-white dark:text-slate-950 text-xs font-bold shadow-2xl backdrop-blur-md transform translate-y-2 group-hover/mockup:translate-y-0 transition-all duration-300">
+                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white text-xs font-bold shadow-[0_10px_25px_rgba(99,102,241,0.5)] backdrop-blur-md transform translate-y-2 group-hover/mockup:translate-y-0 transition-all duration-300 border border-white/25">
                           <span>Explore Live Product</span>
                           <ArrowUpRight size={14} />
                         </div>
@@ -420,9 +420,10 @@ const Projects: React.FC = () => {
                   href={activeModalProject.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-2 rounded-full bg-slate-900 hover:bg-black dark:bg-white dark:hover:bg-zinc-200 text-white dark:text-slate-950 text-xs font-bold shadow-sm transition-all"
+                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:via-indigo-500 hover:to-blue-500 text-white text-xs font-bold shadow-md shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
-                  Visit Live Product
+                  <span>Visit Live Product</span>
+                  <ArrowUpRight size={14} />
                 </a>
                 <button
                   onClick={() => setActiveModalProject(null)}
