@@ -25,7 +25,7 @@
 
 | 💼 Primary Role | 🎓 Academic Roots | 📍 Engineering Base | ⚡ Working Status |
 | :---: | :---: | :---: | :---: |
-| Full Stack Developer @ **JEVXO** | Computer Technology @ **Rangpur Polytechnic** | Rangpur, Bangladesh (UTC+6) | **Available for Q4 Client Projects** |
+| Full Stack Developer @ **JEVXO** | Diploma in Computer Tech (Completed) @ **Rangpur Polytechnic** | Rangpur, Bangladesh (UTC+6) | **Available for Q4 Client Projects** |
 
 </div>
 

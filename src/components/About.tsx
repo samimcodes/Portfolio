@@ -260,7 +260,7 @@ const About: React.FC = () => {
             {/* Clear, Engaging Bio with Breathing Room */}
             <div className="space-y-3 text-slate-600 dark:text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
               <p>
-                I&apos;m a Full Stack Developer at <strong className="text-slate-900 dark:text-white font-semibold">JEVXO</strong> and a Computer Technology student at <strong className="text-slate-900 dark:text-white font-semibold">Rangpur Polytechnic Institute</strong>. I build fast, maintainable, and modern web applications that solve real-world problems.
+                I&apos;m a Full Stack Developer at <strong className="text-slate-900 dark:text-white font-semibold">JEVXO</strong> with a Diploma in Computer Technology from <strong className="text-slate-900 dark:text-white font-semibold">Rangpur Polytechnic Institute</strong>. I build fast, maintainable, and modern web applications that solve real-world problems.
               </p>
               <p>
                 Specializing in <span className="text-slate-900 dark:text-white font-medium">Next.js 16, TypeScript, PostgreSQL, and Prisma ORM</span>, I focus on clean architecture, type safety from API to database, and crafting intuitive digital experiences for clients globally.
