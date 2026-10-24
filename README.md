@@ -4,7 +4,7 @@
 ### **Software Engineer & Full Stack Developer**
 
 <!-- Dynamic Animated Typing Banner -->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=700&size=20&duration=2800&pause=1000&color=6366F1&center=true&vCenter=true&width=650&lines=Full+Stack+Developer+%40+JEVXO;Next.js+16+%26+TypeScript+Specialist;Architecting+Scalable+Full-Stack+Platforms;Available+for+Global+Remote+Roles+%26+MVP+Partnerships)](https://iamsamim.vercel.app)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=700&size=20&duration=2800&pause=1000&color=6366F1&center=true&vCenter=true&width=650&lines=Full+Stack+Developer+%40+JEVXO;Next.js+16+%26+TypeScript+Specialist;Architecting+Scalable+Full-Stack+Platforms;Available+for+Global+Remote+Roles+%26+MVP+Partnerships)](https://samimhosen.vercel.app)
 
 <br />
 
@@ -12,7 +12,7 @@
 
 <br />
 
-[![Live Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-iamsamim.vercel.app-2563EB?style=for-the-badge)](https://iamsamim.vercel.app/)
+[![Live Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-samimhosen.vercel.app-2563EB?style=for-the-badge)](https://samimhosen.vercel.app/)
 [![Download Resume](https://img.shields.io/badge/📄_Download_Resume-Google_Drive-8B5CF6?style=for-the-badge)](https://drive.google.com/file/d/1liEkw82D8zQL0-A0BIqw-PK5l7UBEo7C/view?usp=sharing)
 [![WhatsApp](https://img.shields.io/badge/💬_WhatsApp-+880_1743282144-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/8801743282144)
 [![Fiverr Order](https://img.shields.io/badge/⚡_Fiverr-samim__io-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/samim_io)
