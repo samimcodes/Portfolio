@@ -192,13 +192,13 @@ const Process: React.FC = () => {
                     {item.deliverables.map((del, dIdx) => (
                       <div
                         key={dIdx}
-                        className="flex items-center gap-2 text-xs font-medium text-slate-700 dark:text-zinc-300"
+                        className="flex items-start gap-2 text-xs font-medium text-slate-700 dark:text-zinc-300"
                       >
                         <CheckCircle2
                           size={13}
-                          className="text-emerald-500 dark:text-emerald-400 shrink-0"
+                          className="text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5"
                         />
-                        <span className="truncate">{del}</span>
+                        <span className="leading-snug">{del}</span>
                       </div>
                     ))}
                   </div>
