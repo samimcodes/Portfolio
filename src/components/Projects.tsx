@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Github, Layers, X, CheckCircle2, ShieldCheck, Cpu } from "lucide-react";
+import { ArrowUpRight, Github, Layers, X, CheckCircle2, ShieldCheck, Cpu, Sparkles } from "lucide-react";
 import img1 from "@/assets/1.jpg";
 import img2 from "@/assets/2.jpg";
 import img3 from "@/assets/3.png";
@@ -179,9 +179,10 @@ const Projects: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6366F1] dark:text-[#818CF8] mb-2 block">
-              Selected Work
-            </span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200/60 dark:border-indigo-500/20 text-xs font-semibold uppercase tracking-[0.18em] text-[#6366F1] dark:text-[#818CF8] mb-3">
+              <Sparkles size={13} className="text-indigo-500 animate-pulse" />
+              <span>Selected Work</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
               Case Studies &amp; Projects
             </h2>
@@ -191,12 +192,12 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Minimalist Filter Pills */}
-          <div className="flex items-center gap-1.5 p-1 rounded-full bg-white/80 dark:bg-white/[0.04] backdrop-blur-xl border border-black/[0.06] dark:border-white/[0.08] shadow-sm w-max">
+          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-full bg-white/80 dark:bg-white/[0.04] backdrop-blur-xl border border-black/[0.06] dark:border-white/[0.08] shadow-sm max-w-full">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${activeTab === cat
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${activeTab === cat
                   ? "bg-slate-900 dark:bg-white text-white dark:text-slate-950 shadow-sm"
                   : "text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
                   }`}

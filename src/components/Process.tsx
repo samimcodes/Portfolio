@@ -150,7 +150,7 @@ const Process: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className={`group relative p-6 sm:p-7 rounded-3xl bg-white/90 dark:bg-slate-900/80 backdrop-blur-xl border border-black/[0.06] dark:border-white/10 hover:border-black/[0.12] dark:hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden ${item.accent.glow}`}
+                  className={`group relative p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-[#111726]/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 hover:border-indigo-500/40 dark:hover:border-indigo-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden ${item.accent.glow}`}
                 >
                   {/* Subtle Top Gradient Accent on Hover */}
                   <div
@@ -161,7 +161,7 @@ const Process: React.FC = () => {
                     {/* Top Step & Icon */}
                     <div className="flex items-center justify-between mb-5">
                       <div
-                        className={`w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 border ${item.accent.border} flex items-center justify-center ${item.accent.color} group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm`}
+                        className={`w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 border ${item.accent.border} flex items-center justify-center ${item.accent.color} group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm`}
                       >
                         <Icon size={22} />
                       </div>
@@ -214,14 +214,14 @@ const Process: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-3xl p-6 sm:p-8 bg-slate-100/80 dark:bg-white/[0.02] border border-black/[0.05] dark:border-white/[0.06] backdrop-blur-xl flex flex-col lg:flex-row items-center justify-between gap-6"
+          className="rounded-3xl p-6 sm:p-8 bg-white/80 dark:bg-[#111726]/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.3)] flex flex-col lg:flex-row items-center justify-between gap-6"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full lg:w-auto">
             {guarantees.map((g, idx) => {
               const GIcon = g.icon;
               return (
                 <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-zinc-300">
-                  <div className="w-6 h-6 rounded-lg bg-indigo-500/10 flex items-center justify-center shrink-0 text-indigo-600 dark:text-indigo-400">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0 text-indigo-600 dark:text-indigo-400 shadow-sm">
                     <GIcon size={14} />
                   </div>
                   <span className="font-medium">{g.text}</span>
@@ -232,7 +232,7 @@ const Process: React.FC = () => {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-zinc-200 text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all shrink-0 group w-full sm:w-auto justify-center"
+            className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:via-indigo-500 hover:to-blue-500 text-white text-xs sm:text-sm font-semibold shadow-[0_4px_20px_rgba(59,130,246,0.3)] hover:shadow-[0_6px_25px_rgba(99,102,241,0.4)] hover:scale-[1.02] active:scale-98 transition-all shrink-0 w-full sm:w-auto justify-center overflow-hidden"
           >
             <span>Start Your Project Roadmap</span>
             <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />

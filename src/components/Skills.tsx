@@ -108,11 +108,11 @@ const Skills: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-500/20 mb-3">
-              <Sparkles size={13} className="text-indigo-500" />
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-[0.18em] uppercase bg-indigo-50 dark:bg-indigo-500/10 text-[#6366F1] dark:text-[#818CF8] border border-indigo-200/60 dark:border-indigo-500/20 mb-3">
+              <Sparkles size={13} className="text-indigo-500 animate-pulse" />
               Technical Stack
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-zinc-50">
               Skills &amp; Technologies
             </h2>
             <p className="text-slate-600 dark:text-zinc-400 max-w-xl mx-auto mt-2 text-sm sm:text-base">
@@ -129,7 +129,7 @@ const Skills: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-xl border border-black/[0.06] dark:border-white/10 shadow-sm flex flex-col justify-between"
+            className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-[#111726]/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.3)] flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-white/5">
@@ -156,7 +156,7 @@ const Skills: React.FC = () => {
                         <Icon size={20} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-wrap items-center justify-between gap-1">
                           <h4 className="text-sm font-bold text-slate-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                             {tech.name}
                           </h4>
@@ -174,7 +174,7 @@ const Skills: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-5 mt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400">
+            <div className="pt-5 mt-6 border-t border-slate-100 dark:border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-zinc-400">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck size={14} className="text-emerald-500" />
                 Type-Safe &amp; Production Verified
@@ -191,7 +191,7 @@ const Skills: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-xl border border-black/[0.06] dark:border-white/10 shadow-sm flex flex-col justify-between"
+            className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-[#111726]/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_15px_35px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.3)] flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-white/5">
@@ -237,7 +237,7 @@ const Skills: React.FC = () => {
             </div>
 
             {/* Bottom Engineering Standards Ribbon */}
-            <div className="pt-5 mt-6 border-t border-slate-100 dark:border-white/5 grid grid-cols-3 gap-2 text-center">
+            <div className="pt-5 mt-6 border-t border-slate-100 dark:border-white/5 flex flex-wrap items-center justify-around gap-2 text-center">
               <div className="flex items-center justify-center gap-1.5 text-[11px] font-medium text-slate-600 dark:text-zinc-400">
                 <Zap size={13} className="text-amber-500 shrink-0" />
                 <span>Lighthouse 95+</span>

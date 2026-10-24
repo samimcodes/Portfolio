@@ -67,7 +67,7 @@ const faqs: FAQItem[] = [
     category: "Delivery & Pricing",
     question: "How do we get started on a project together?",
     answer:
-      "You can send a message directly through the contact form, via WhatsApp (+880 1743282144), or by email (mdsamimhosen827@gmail.com). We will review your goals, outline the technical specifications, and establish a clear delivery timeline.",
+      "You can send a message directly through the contact form, via WhatsApp (+880 1743282144), or by email (mdsamimhoen827@gmail.com). We will review your goals, outline the technical specifications, and establish a clear delivery timeline.",
   },
 ];
 

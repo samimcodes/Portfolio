@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
               <SiFiverr size={16} /> Fiverr
             </a>
             <a
-              href="mailto:mdsamimhosen827@gmail.com"
+              href="mailto:mdsamimhoen827@gmail.com"
               className="hover:text-[#17191F] dark:hover:text-white transition-colors flex items-center gap-1.5"
             >
               <Mail size={14} /> Email

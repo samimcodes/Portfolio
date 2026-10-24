@@ -124,9 +124,10 @@ const Contact: React.FC = () => {
                 <span>Available for Q4 Client Projects &amp; Remote Roles</span>
               </div>
 
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6366F1] dark:text-[#818CF8] mb-2 block">
-                Get in Touch
-              </span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200/60 dark:border-indigo-500/20 text-xs font-semibold uppercase tracking-[0.18em] text-[#6366F1] dark:text-[#818CF8] mb-3">
+                <Sparkles size={13} className="text-indigo-500 animate-pulse" />
+                <span>Contact &amp; Collaboration</span>
+              </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
                 Let&apos;s build something <br />
@@ -199,7 +200,7 @@ const Contact: React.FC = () => {
 
                 {/* Direct Email */}
                 <a
-                  href="mailto:mdsamimhosen827@gmail.com"
+                  href="mailto:mdsamimhoen827@gmail.com"
                   className="group flex items-center justify-between p-4 rounded-2xl bg-slate-50/90 dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/[0.08] hover:border-indigo-500/50 hover:bg-indigo-50/40 dark:hover:bg-white/[0.07] hover:shadow-md hover:shadow-indigo-500/10 transition-all duration-200"
                 >
                   <div className="flex items-center gap-3.5">
@@ -211,7 +212,7 @@ const Contact: React.FC = () => {
                         Direct Email
                       </p>
                       <p className="text-sm font-bold text-slate-900 dark:text-white truncate max-w-[210px] sm:max-w-none">
-                        mdsamimhosen827@gmail.com
+                        mdsamimhoen827@gmail.com
                       </p>
                     </div>
                   </div>
@@ -433,7 +434,7 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-zinc-100 dark:text-slate-950 shadow-md hover:shadow-xl hover:scale-[1.008] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-4 rounded-2xl font-bold text-sm bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:via-indigo-500 hover:to-blue-500 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
