@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -14,6 +14,7 @@ import {
   Clock,
   ShieldCheck,
   CheckCircle2,
+  Zap,
 } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
 import meImg from "@/assets/me.png";
@@ -37,14 +38,46 @@ const techStack = [
 
 const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [timeStr, setTimeStr] = useState<string>("");
 
+  // Live Bangladesh (UTC+6) Clock
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const formatted = now.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Dhaka",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      });
+      setTimeStr(formatted);
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Real-Time 3D Gyroscope / Tilt Physics
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setMousePos({ x, y });
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    // Calculate tilt angles (range: -14deg to +14deg)
+    const rotateX = -((y - centerY) / centerY) * 12;
+    const rotateY = ((x - centerX) / centerX) * 12;
+    setTilt({ rotateX, rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setTilt({ rotateX: 0, rotateY: 0 });
   };
 
   return (
@@ -146,68 +179,85 @@ const Hero: React.FC = () => {
               </span>
             </div>
 
-            {/* Social Links & Location */}
-            <div className="flex items-center gap-5 text-slate-500 dark:text-slate-400 pt-5 border-t border-slate-200/60 dark:border-white/[0.06]">
-              <a
-                href="https://github.com/samimcodes"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub Profile"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/samim01/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn Profile"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="mailto:mdsamimhosen827@gmail.com"
-                aria-label="Email Samim"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                <Mail size={20} />
-              </a>
-              <a
-                href="https://www.fiverr.com/samim_io"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Fiverr Profile"
-                className="hover:text-[#1DBF73] transition-colors"
-              >
-                <SiFiverr size={21} />
-              </a>
-              <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
-              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                Rangpur, Bangladesh (UTC+6)
-              </span>
+            {/* Social Links & Real-Time Location & Clock */}
+            <div className="flex flex-wrap items-center gap-4 text-slate-500 dark:text-slate-400 pt-5 border-t border-slate-200/60 dark:border-white/[0.06]">
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://github.com/samimcodes"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub Profile"
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  <Github size={19} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/samim01/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  <Linkedin size={19} />
+                </a>
+                <a
+                  href="mailto:mdsamimhosen827@gmail.com"
+                  aria-label="Email Samim"
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  <Mail size={19} />
+                </a>
+                <a
+                  href="https://www.fiverr.com/samim_io"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Fiverr Profile"
+                  className="hover:text-[#1DBF73] transition-colors"
+                >
+                  <SiFiverr size={20} />
+                </a>
+              </div>
+
+              <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700 hidden sm:inline" />
+
+              {/* Dynamic Live Time & Location Capsule */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100/90 dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/[0.08] text-xs font-medium text-slate-600 dark:text-zinc-300 backdrop-blur-md shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span>Rangpur, BD</span>
+                <span className="text-slate-300 dark:text-zinc-600">•</span>
+                <Clock size={12} className="text-blue-500" />
+                <span className="font-mono text-[11px] font-semibold text-slate-800 dark:text-zinc-200">
+                  {timeStr || "UTC+6"}
+                </span>
+                <span className="text-[9px] font-bold tracking-wider px-1.5 py-0.2 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                  LIVE
+                </span>
+              </div>
             </div>
           </motion.div>
 
-          {/* Right Column: 3D Photo Showcase with Conic Border Beam & Spotlight Hover */}
+          {/* Right Column: 3D Photo Showcase with Gyroscope Tilt & Specular Glare */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92, rotateY: -6 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative flex justify-center lg:justify-end"
+            className="lg:col-span-5 relative flex justify-center lg:justify-end [perspective:1000px]"
           >
             <div
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className="relative w-[300px] sm:w-[330px] aspect-[4/5] group"
+              onMouseLeave={handleMouseLeave}
+              className="relative w-[300px] sm:w-[330px] aspect-[4/5] group cursor-pointer"
             >
               {/* 1. Interactive Mouse Spotlight Glow */}
               <div
                 className="absolute -inset-6 rounded-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-2xl -z-10"
                 style={{
                   background: isHovered
-                    ? `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(99, 102, 241, 0.28), transparent 70%)`
+                    ? `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(99, 102, 241, 0.32), transparent 70%)`
                     : "none",
                 }}
               />
@@ -239,15 +289,41 @@ const Hero: React.FC = () => {
               {/* 4. Ambient Aura Backdrop */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/25 via-indigo-600/30 to-amber-500/15 rounded-[2.5rem] opacity-50 dark:opacity-65 blur-2xl group-hover:opacity-85 transition-all duration-500 -z-10 pointer-events-none" />
 
-              {/* 5. Razor-Sharp Photo Card */}
-              <div className="relative z-10 w-full h-full p-2.5 rounded-[2.5rem] bg-white/95 dark:bg-[#111726]/95 backdrop-blur-xl border border-slate-200/90 dark:border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-transform duration-500 group-hover:scale-[1.01] flex items-center justify-center overflow-hidden">
-                <Image
-                  src={meImg}
-                  alt="Md Samim Hosen — Full Stack Developer"
-                  priority
-                  unoptimized
-                  className="w-full h-full object-cover object-top rounded-[2rem] transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+              {/* 5. Razor-Sharp 3D Card with Gyroscope/Tilt Physics & Specular Glare */}
+              <div
+                style={{
+                  transform: isHovered
+                    ? `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg) scale3d(1.02, 1.02, 1.02)`
+                    : "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)",
+                  transition: isHovered
+                    ? "transform 0.08s ease-out"
+                    : "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+                  transformStyle: "preserve-3d",
+                }}
+                className="relative z-10 w-full h-full p-2.5 rounded-[2.5rem] bg-white/95 dark:bg-[#111726]/95 backdrop-blur-xl border border-slate-200/90 dark:border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] flex items-center justify-center overflow-hidden"
+              >
+                <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-950">
+                  <Image
+                    src={meImg}
+                    alt="Md Samim Hosen — Full Stack Developer"
+                    priority
+                    unoptimized
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+
+                  {/* Dynamic Specular 3D Glare follow cursor */}
+                  {isHovered && (
+                    <div
+                      className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-60 transition-opacity duration-300"
+                      style={{
+                        background: `radial-gradient(300px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.55), transparent 75%)`,
+                      }}
+                    />
+                  )}
+
+                  {/* Subtle Inner Glass Ring */}
+                  <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/20 dark:ring-white/10 pointer-events-none" />
+                </div>
               </div>
 
               {/* 6. Floating Glass Badge: 20+ Projects with Gentle Floating Bob */}
@@ -261,24 +337,29 @@ const Hero: React.FC = () => {
                   opacity: { delay: 0.6, duration: 0.6 },
                   y: { repeat: Infinity, duration: 4.2, ease: "easeInOut" },
                 }}
-                className="absolute -bottom-6 -left-6 sm:-left-8 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl px-4 py-3 rounded-2xl border border-slate-200/90 dark:border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.16)] transition-all duration-300"
+                className="absolute -bottom-6 -left-4 sm:-left-8 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl px-4 py-3 rounded-2xl border border-slate-200/90 dark:border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.16)] transition-all duration-300 hover:scale-105"
               >
-                <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl text-white shadow-lg shadow-blue-500/30">
-                    <Layers size={22} />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 rounded-xl text-white shadow-lg shadow-blue-500/30">
+                    <Layers size={19} />
                   </div>
                   <div className="text-left">
-                    <p className="font-bold text-slate-900 dark:text-white text-sm">
-                      20+ Projects
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                      Production &amp; Full-Stack
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">
+                        20+ Projects
+                      </p>
+                      <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                        PROD
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-0.5">
+                      Full-Stack &amp; Scalable SaaS
                     </p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* 7. Floating Glass Badge: Full-Stack Beacon with Gentle Floating Bob */}
+              {/* 7. Floating Glass Badge: Available for Hire & Response Time Widget */}
               <motion.div
                 initial={{ y: -20, opacity: 0 }}
                 animate={{
@@ -289,13 +370,23 @@ const Hero: React.FC = () => {
                   opacity: { delay: 0.75, duration: 0.6 },
                   y: { repeat: Infinity, duration: 4.8, ease: "easeInOut", delay: 1 },
                 }}
-                className="absolute -top-5 -right-4 sm:-right-6 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl px-4 py-2.5 rounded-2xl border border-slate-200/90 dark:border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.16)] transition-all duration-300"
+                className="absolute -top-5 -right-3 sm:-right-6 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl px-3.5 py-2.5 rounded-2xl border border-slate-200/90 dark:border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.16)] transition-all duration-300 hover:scale-105"
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-                  <p className="font-bold text-slate-900 dark:text-white text-xs">
-                    Full-Stack Specialist
-                  </p>
+                  <div className="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                    <Zap size={15} className="fill-emerald-500" />
+                  </div>
+                  <div className="text-left">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                      <p className="font-bold text-slate-900 dark:text-white text-xs">
+                        Available for Hire
+                      </p>
+                    </div>
+                    <p className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5">
+                      ⚡ Reply time: &lt; 2 hours
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </div>
